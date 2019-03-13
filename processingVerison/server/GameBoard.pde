@@ -2,8 +2,8 @@ public static final int BOARD_SIZE = 3;
 
 class GameBoard{
  int cells[][] = new int[BOARD_SIZE][BOARD_SIZE];//[row][colum]
- 
- 
+ boolean displayable = false;
+ PVector location;
  
  GameBoard(){
    for(int i =0; i < BOARD_SIZE; i++){
@@ -11,6 +11,11 @@ class GameBoard{
        cells[i][j] = 0;
      }
    }
+ }
+ 
+ GameBoard(PVector loc){
+   this();
+   location = loc;
  }
  
  boolean freeSpot(int row,int colum){
